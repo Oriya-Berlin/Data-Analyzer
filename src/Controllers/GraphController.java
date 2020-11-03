@@ -1,7 +1,6 @@
 package Controllers;
 
 import Classes.*;
-import Utils.Row;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -173,8 +172,8 @@ public class GraphController {
             else
                 chart.setStyle("-fx-border-color: blue ; -fx-border-width: 0 ; ");
         });
-        DragResizeMod.makeResizable(chart);
-        controller.target.getAnchorPane().addChildren(chart);
+        //DragResizeMod.makeResizable(chart);
+        //controller.target.getAnchorPane().addChildren(chart);
     }
 
 
@@ -377,7 +376,7 @@ public class GraphController {
         dataBarRoot = loader.load();
         dataBarRoot.setLayoutX(dataBarXPos);
         dataBarRoot.setLayoutY(dataBarYPos);
-        controller.target.getAnchorPane().getChildren().add(dataBarRoot);
+        //controller.target.getAnchorPane().getChildren().add(dataBarRoot);
 
         // set placeholder on data bar field according to user selection (row/column)
         if(row_or_column.getSelectedToggle() == rowRadio)
@@ -571,7 +570,7 @@ public class GraphController {
             // if column:
             if (rowORcolumn.equals("column")) {
                 try {
-                    Double check = Double.parseDouble(table.getColumns().get(selected_index).getCellObservableValue(0).getValue().toString());
+                    //Double check = Double.parseDouble(table.getColumns().get(selected_index).getCellObservableValue(0).getValue().toString());
                 } catch (Exception e) {
                     isConvertible = false;
                     System.out.println("* NOT Convertible *");
@@ -595,15 +594,15 @@ public class GraphController {
         graphController = this;
 
         // this piece of code will activate event handlers on every table that contains data
-        ArrayList<AnalyzerTableView> tables = Controller.getTables();
-        for (AnalyzerTableView table : tables)
-        {
-            if (table.isDataAdded == true)
-            {
-                addColumnEventHandler(table);
-                addRowEventHandler(table);
-            }
-        }
+//        ArrayList<AnalyzerTableView> tables = Controller.getTables();
+//        for (AnalyzerTableView table : tables)
+//        {
+//            if (table.isDataAdded == true)
+//            {
+//                addColumnEventHandler(table);
+//                addRowEventHandler(table);
+//            }
+//        }
     }
 
 
@@ -712,14 +711,14 @@ public class GraphController {
         //graphController.colRadio = null;
         //graphController.rowRadio = null;
 
-        ArrayList<AnalyzerTableView> tables = Controller.getTables();
-
-        for (AnalyzerTableView table : tables) {
-            table.getSelectionModel().clearSelection();
-            table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-            table.setEditable(true);
-            table.getSelectionModel().setCellSelectionEnabled(true);
-        }
+//        ArrayList<AnalyzerTableView> tables = Controller.getTables();
+//
+//        for (AnalyzerTableView table : tables) {
+//            table.getSelectionModel().clearSelection();
+//            table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//            table.setEditable(true);
+//            table.getSelectionModel().setCellSelectionEnabled(true);
+//        }
     }
 
 
@@ -758,8 +757,8 @@ public class GraphController {
                 roundChart.setStyle("-fx-border-color: blue ; -fx-border-width: 0 ; ");
         });
 
-        DragResizeMod.makeResizable(roundChart);
-        controller.target.getAnchorPane().addChildren(roundChart);
+        //DragResizeMod.makeResizable(roundChart);
+        //controller.target.getAnchorPane().addChildren(roundChart);
     }
 
 

@@ -1,13 +1,13 @@
 package Classes;
 
 import Controllers.GraphController;
-import Utils.Row;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.layout.VBox;
 
 import java.text.DecimalFormat;
@@ -164,7 +164,7 @@ public class ChartsDataHandling {
 
         Double y;
         String x;
-        Row row_y = null;
+        TableRow<Object> row_y = null;
         Row row_x = null;
 
         for(int index=0; index<y_axis_array.size(); index++)

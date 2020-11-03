@@ -1,6 +1,7 @@
 package Classes;
 
-import Contorllers.GraphController;
+
+import Controllers.GraphController;
 import javafx.collections.ObservableList;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
