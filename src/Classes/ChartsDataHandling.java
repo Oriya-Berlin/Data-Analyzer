@@ -164,7 +164,7 @@ public class ChartsDataHandling {
 
         Double y;
         String x;
-        TableRow<Object> row_y = null;
+        Row row_y = null;
         Row row_x = null;
 
         for(int index=0; index<y_axis_array.size(); index++)

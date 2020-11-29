@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+   <children>
+      <TabPane prefHeight="83.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text=" Main ">
+               <content>
+                  <HBox prefHeight="41.0" prefWidth="556.0" spacing="50.0" style="-fx-background-color: blue;">
+                     <children>
+                        <Button fx:id="table" mnemonicParsing="false" text="Button1" onDragDetected="#onDragDetected" onDragDone="#onDragDone">
+                             <graphic>
+                                 <ImageView fitHeight="25" fitWidth="25" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@../Resources/table.png" />
+                                     </image>
+                                 </ImageView>
+                             </graphic>
+                         </Button>
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Exit" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="12.0" />
+                     </padding>
+                  </HBox>
+               </content>
+          </Tab>
+          <Tab text=" Data Analysis ">
+               <content>
+                  <HBox prefHeight="41.0" prefWidth="556.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="table img" />
+                              <Button mnemonicParsing="false" text="Browse..." />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" top="13.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="graph1" />
+                              <Button mnemonicParsing="false" text="graph2" />
+                              <Button mnemonicParsing="false" text="graph3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets top="13.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+            <Tab text=" Math ">
+              <content>
+                <AnchorPane fx:id="mainBoard" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Separator layoutX="-7.0" layoutY="83.0" prefHeight="2.0" prefWidth="608.0" />
+   </children>
+</AnchorPane>

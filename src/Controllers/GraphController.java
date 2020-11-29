@@ -172,17 +172,19 @@ public class GraphController {
             else
                 chart.setStyle("-fx-border-color: blue ; -fx-border-width: 0 ; ");
         });
-        //DragResizeMod.makeResizable(chart);
+        DragResizeMod.makeResizable(chart);
+        AnchorPane p =  controller.getMainBoard();
+        System.out.println(p.getChildren().size());
+        p.getChildren().add(chart);
         //controller.target.getAnchorPane().addChildren(chart);
     }
-
 
 
     public void disPlayGraphInterface() throws IOException {
 
         graphUIstage = new Stage();
         graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/ChartInterface.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/ChartInterface.fxml"));
         loader.setController(this);  //////////////////////////////////////////
         AnchorPane root = loader.load();
         graphUIstage.setTitle("Graph Builder");
