@@ -10,10 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -88,6 +85,7 @@ public class GraphController {
     public GraphController(String graphType, double layout_X, double layout_Y) throws IOException {
 
         this.graphType = graphType;
+        this.graphUIstage = new Stage();
 
         switch (graphType) {
 
@@ -172,17 +170,18 @@ public class GraphController {
             else
                 chart.setStyle("-fx-border-color: blue ; -fx-border-width: 0 ; ");
         });
+
         DragResizeMod.makeResizable(chart);
-        AnchorPane p =  controller.getMainBoard();
-        System.out.println(p.getChildren().size());
-        p.getChildren().add(chart);
-        //controller.target.getAnchorPane().addChildren(chart);
+        //controller.canvas.getChildren().add(chart);
+
+        controller.canvas.addChildren(chart);
+
     }
 
 
     public void disPlayGraphInterface() throws IOException {
 
-        graphUIstage = new Stage();
+//        graphUIstage = new Stage();
         graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/ChartInterface.fxml"));
         loader.setController(this);  //////////////////////////////////////////
@@ -195,7 +194,7 @@ public class GraphController {
     // TEST
     public void disPlayGraphInterface_ttt() throws IOException {
 
-        graphUIstage = new Stage();
+//        graphUIstage = new Stage();
         graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/3DChartsInterface.fxml"));
         loader.setController(this);
