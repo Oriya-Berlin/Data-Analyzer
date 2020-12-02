@@ -182,13 +182,13 @@ public class GraphController {
     public void disPlayGraphInterface() throws IOException {
 
 //        graphUIstage = new Stage();
-        graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
+        this.graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/ChartInterface.fxml"));
         loader.setController(this);  //////////////////////////////////////////
         AnchorPane root = loader.load();
-        graphUIstage.setTitle("Graph Builder");
-        graphUIstage.setScene(new Scene(root));
-        graphUIstage.show();
+        this.graphUIstage.setTitle("Graph Builder");
+        this.graphUIstage.setScene(new Scene(root));
+        this.graphUIstage.show();
     }
     // #################################################################
     // TEST
@@ -363,14 +363,14 @@ public class GraphController {
             }
         }
 
-        graphUIstage.show();
+        this.graphUIstage.show();
 
     }
 
 
 
     private void displayDataBar() throws IOException {
-        graphUIstage.close();
+        this.graphUIstage.close();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/DataBar.fxml"));
         loader.setController(this);
@@ -391,7 +391,7 @@ public class GraphController {
     @FXML
     private void XY_Selection_btn(MouseEvent mouseEvent) throws IOException {
 
-        graphUIstage.close();
+        this.graphUIstage.close();
         String Xbtn_or_Ybtn = ((Button) mouseEvent.getSource()).getId();
 
         // y
@@ -490,7 +490,7 @@ public class GraphController {
         }
 
         //cancelTableAbilities();
-        graphUIstage.close();
+        this.graphUIstage.close();
         cancelTableAbilities();
 
     }

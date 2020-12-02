@@ -5,6 +5,7 @@ import Classes.CanvasPane;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,9 +25,10 @@ public class Controller {
     TabPane tabPane = new TabPane();
     @FXML
     CanvasPane canvas = new CanvasPane();
+    @FXML
+    Separator separator = new Separator();
 
-
-    public GraphController graph;
+//    public GraphController graph;
     public static Controller controller = null;
 
     double xCoordinate;
@@ -80,13 +82,78 @@ public class Controller {
     @FXML
     public void onDragDone(DragEvent event) throws IOException {
 
+         GraphController graph;
         boolean isTableAdded = true;
         String btnId = ((Button) event.getGestureSource()).getId();
 
         switch (btnId) {
+
             case "table":
                 if (isTableAdded)
+                    return;
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "lineChartBtn":
+                if (isTableAdded)
                     graph = new GraphController("LINE_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "stackedBarChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("STACKED_BAR_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "scatterChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("SCATTER_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "horizontalBarChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("HORIZONTAL_BAR_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "barChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("BAR_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "stackedAreaChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("STACKED_AREA_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "areaChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("AREA_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "ringChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("RING_CHART", xCoordinate, yCoordinate);
+                else
+                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+                break;
+
+            case "pieChartBtn":
+                if (isTableAdded)
+                    graph = new GraphController("PIE_CHART", xCoordinate, yCoordinate);
                 else
                     AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
                 break;
@@ -99,7 +166,7 @@ public class Controller {
     public void initialize() {
         controller = this;
 
-//        separator.prefWidthProperty().bind(mainBoard.widthProperty());
+        separator.prefWidthProperty().bind(mainWindow.widthProperty());
         tabPane.prefWidthProperty().bind(mainWindow.widthProperty());
         canvas.prefWidthProperty().bind(mainWindow.widthProperty());
         canvas.prefHeightProperty().bind(mainWindow.heightProperty());

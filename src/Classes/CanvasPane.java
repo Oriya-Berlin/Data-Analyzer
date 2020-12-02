@@ -22,7 +22,7 @@ public class CanvasPane extends AnchorPane {
                 {
                     // if we close some graph, it will close also he's graph interface window
                     if (node instanceof Chart){
-                        // TODO : make every chart his own  chart window interface
+                        // TODO : make every chart his own chart window interface
                         GraphController graphController = GraphController.getInstance();
                         graphController.graphUIstage.close();
                         System.out.println(graphController.graphUIstage);
