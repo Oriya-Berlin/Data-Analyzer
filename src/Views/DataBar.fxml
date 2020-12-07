@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
         <VBox prefHeight="104.0" prefWidth="557.0">
             <children>
@@ -27,7 +27,7 @@
 <!--                </HBox>-->
                 <HBox maxWidth="-Infinity" prefHeight="21.0" prefWidth="564.0" VBox.vgrow="ALWAYS">
                     <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" onAction="#dataBar_OK_btn" style="-fx-background-color: rgb(140,140,140); -fx-text-fill: white;" text="OK">
+                        <Button alignment="CENTER" mnemonicParsing="false" prefWidth="60.0" prefHeight="35.0" onAction="#dataBar_OK_btn" style="-fx-background-color: rgb(0,140,0); -fx-text-fill: white;" text="OK">
                             <VBox.margin>
                                 <Insets left="255.0" top="17.0" />
                             </VBox.margin>
@@ -38,7 +38,7 @@
                         <Insets left="1.0" />
                      </HBox.margin>
                         </Button>
-                        <ListView fx:id="dataBar_field" orientation="HORIZONTAL" maxHeight="-Infinity" prefHeight="27.0" prefWidth="520.0" HBox.hgrow="ALWAYS" />
+                        <ListView fx:id="dataBar_field" orientation="HORIZONTAL" maxHeight="-Infinity" prefHeight="35.0" prefWidth="520.0" HBox.hgrow="ALWAYS" />
                     </children>
                     <VBox.margin>
                         <Insets top="-13.0" />

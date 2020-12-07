@@ -1,19 +1,23 @@
 package Controllers;
 
-import Classes.AlertsMaker;
-import Classes.CanvasPane;
+import Classes.*;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
-
+import java.util.Arrays;
+import java.util.HashMap;
 
 
 public class Controller {
@@ -28,7 +32,7 @@ public class Controller {
     @FXML
     Separator separator = new Separator();
 
-//    public GraphController graph;
+    public GraphController graph;
     public static Controller controller = null;
 
     double xCoordinate;
@@ -82,15 +86,20 @@ public class Controller {
     @FXML
     public void onDragDone(DragEvent event) throws IOException {
 
-         GraphController graph;
+//        GraphController graph;
         boolean isTableAdded = true;
         String btnId = ((Button) event.getGestureSource()).getId();
 
         switch (btnId) {
 
             case "table":
-                if (isTableAdded)
-                    return;
+                if (isTableAdded) {
+                    //TODO: add table window here
+                    AnalyzerTableView table = new AnalyzerTableView();
+                    table = createDefaultTable();
+                    DragResizeMod.makeResizable(table);
+                    canvas.addChildren(table);
+                }
                 else
                     AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
                 break;
@@ -179,4 +188,90 @@ public class Controller {
     }
 
 
+
+    // data for example
+    public AnalyzerTableView createDefaultTable() {
+
+        AnalyzerTableView tableA = new AnalyzerTableView("TableA");
+        ObservableList<Row> table_dataA;
+
+        // populate the data for table A
+        table_dataA = FXCollections.observableArrayList(new Row(new HashMap<String, Double>() {
+            {
+                put("1", 10000.0);
+                put("2", 120000.0);
+                put("3", 5000.0);
+                put("4", 30000.0);
+                put("5", 0.0);
+            }
+        }), new Row(new HashMap<String, Double>() {
+            {
+                put("1", 31000.0);
+                put("2", 74000.0);
+                put("3", 43000.0);
+                put("4", 17000.0);
+                put("5", 0.0);
+            }
+        }), new Row(new HashMap<String, Double>() {
+            {
+                put("1", 14000.0);
+                put("2", 53000.0);
+                put("3", 20000.0);
+                put("4", 77000.0);
+                put("5", 0.0);
+            }
+        }), new Row(new HashMap<String, Double>() {
+            {
+                put("1", 52000.0);
+                put("2", 33000.0);
+                put("3", 20000.0);
+                put("4", 24000.0);
+                put("5", 0.0);
+            }
+        }));
+
+        // set tables columns for table A
+        TableColumn<Row, String> columnA1 = new TableColumn<>("Att1");
+        TableColumn<Row, String> columnA2 = new TableColumn<>("Att2");
+        TableColumn<Row, String> columnA3 = new TableColumn<>("Att3");
+        TableColumn<Row, String> columnA4 = new TableColumn<>("Att4");
+        TableColumn<Row, String> columnA5 = new TableColumn<>("Att5");
+
+        // set Row Cell Value Factory for each column so the can display the data
+        columnA1.setCellValueFactory(new RowCellValueFactory(1));
+        columnA2.setCellValueFactory(new RowCellValueFactory(2));
+        columnA3.setCellValueFactory(new RowCellValueFactory(3));
+        columnA4.setCellValueFactory(new RowCellValueFactory(4));
+        columnA5.setCellValueFactory(new RowCellValueFactory(5));
+
+        /* this piece of code will put index on every row */
+        TableColumn<Row, Number> indexColumn = new TableColumn<>("#");
+        indexColumn.setSortable(false);
+        indexColumn.setCellValueFactory(column-> new ReadOnlyObjectWrapper<>(tableA.getItems().indexOf(column.getValue())));
+        /* ---------------------------------------------- */
+
+        /* this code will give us the option to select column with the mouse and get his name & index */
+        /*
+        tableA.getFocusModel().focusedCellProperty().addListener((obs, oldVal, newVal) -> {
+
+            if(newVal.getTableColumn() != null){
+                tableA.getSelectionModel().selectRange(0, newVal.getTableColumn(), tableA.getItems().size(), newVal.getTableColumn());
+                System.out.println("Selected TableColumn: "+ newVal.getTableColumn().getText());
+                System.out.println("Selected column index: "+ newVal.getColumn());
+            }
+        });
+        */
+        /* ---------------------------------------------------------------------------------------- */
+
+        tableA.setEditable(true);
+        tableA.setMinWidth(100);
+        tableA.setItems(table_dataA);
+        tableA.getColumns().addAll(Arrays.asList(indexColumn, columnA1, columnA2, columnA3, columnA4, columnA5));
+        tableA.getSelectionModel().setCellSelectionEnabled(true);
+
+        DragResizeMod.makeResizable(tableA);
+
+
+        return tableA;
+    }
 }

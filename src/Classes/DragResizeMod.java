@@ -3,9 +3,10 @@ package Classes;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.chart.Chart;
 import javafx.scene.input.MouseEvent;
-
+import javafx.scene.layout.AnchorPane;
 
 
 public class DragResizeMod {
@@ -46,6 +47,10 @@ public class DragResizeMod {
             if (node instanceof Chart) {
                 ((Chart) node).setPrefWidth(w);
                 ((Chart) node).setPrefHeight(h);
+            }
+            if (node instanceof AnchorPane) {
+                ((AnchorPane) node).setPrefWidth(w);
+                ((AnchorPane) node).setPrefHeight(h);
             }
         }
     };

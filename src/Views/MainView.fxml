@@ -153,10 +153,14 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </HBox>
-                         <HBox>
+
+                         <HBox spacing="5.0">
                              <TextField fx:id="chartsBar" prefHeight="40.0" prefWidth="450.0" editable="false" />
+                             <Button fx:id="chartsBar_ok_btn" prefHeight="38.0" prefWidth="80.0" mnemonicParsing="false" style="-fx-background-color: rgb(255,0,0); -fx-text-fill: white;" text="OK">
+                             </Button>
+
                              <HBox.margin>
-                                 <Insets top="5.0" left="680" />
+                                 <Insets top="5.0" left="680" right="10"/>
                              </HBox.margin>
                          </HBox>
 

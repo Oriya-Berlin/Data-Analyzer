@@ -6,6 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
@@ -81,6 +83,7 @@ public class GraphController {
     public ArrayList<Number> finalRoundChartValues = new ArrayList<>();
     /* -------------------------------------------------------------- */
 
+
     // constructor
     public GraphController(String graphType, double layout_X, double layout_Y) throws IOException {
 
@@ -90,10 +93,9 @@ public class GraphController {
         switch (graphType) {
 
             case "LINE_CHART":
-                this.chart = new LineChart<Number, Number>(X_axis_NUMBER, Y_axis); ///
+                this.chart = new LineChart<Number, Number>(X_axis_NUMBER, Y_axis);
                 displayChart(layout_X, layout_Y);
                 disPlayGraphInterface();
-                //disPlayGraphInterface_ttt();
                 break;
 
             case "STACKED_BAR_CHART":
@@ -149,8 +151,6 @@ public class GraphController {
                 disableGraphInterfaceElements();
                 break;
         }
-
-
     }
 
 
@@ -172,11 +172,10 @@ public class GraphController {
         });
 
         DragResizeMod.makeResizable(chart);
-        //controller.canvas.getChildren().add(chart);
-
         controller.canvas.addChildren(chart);
 
     }
+
 
 
     public void disPlayGraphInterface() throws IOException {
@@ -184,26 +183,13 @@ public class GraphController {
 //        graphUIstage = new Stage();
         this.graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/ChartInterface.fxml"));
-        loader.setController(this);  //////////////////////////////////////////
+        loader.setController(this);
         AnchorPane root = loader.load();
         this.graphUIstage.setTitle("Graph Builder");
         this.graphUIstage.setScene(new Scene(root));
         this.graphUIstage.show();
     }
-    // #################################################################
-    // TEST
-    public void disPlayGraphInterface_ttt() throws IOException {
 
-//        graphUIstage = new Stage();
-        graphUIstage.setOnCloseRequest(event -> cancelTableAbilities());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/3DChartsInterface.fxml"));
-        loader.setController(this);
-        AnchorPane root = loader.load();
-        graphUIstage.setTitle("Graph Builder");
-        graphUIstage.setScene(new Scene(root));
-        graphUIstage.show();
-    }
-    // #################################################################
 
 
     // update dataBar when user choose COLUMNS as axes
@@ -343,7 +329,7 @@ public class GraphController {
             }
             if (row_or_column.getSelectedToggle() == rowRadio)
             {
-                updateGraphInterfaceFields_roundChart_rows(); ////////////////////////////////
+                updateGraphInterfaceFields_roundChart_rows();
                 ChartsDataHandling.rowsData(graphType, selectedTable, selected_X_row, selected_Y_rows, selected_legends, finalRoundChartValues);
             }
 
@@ -372,12 +358,32 @@ public class GraphController {
     private void displayDataBar() throws IOException {
         this.graphUIstage.close();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/DataBar.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/DataBar.fxml"));
         loader.setController(this);
         dataBarRoot = loader.load();
-        dataBarRoot.setLayoutX(dataBarXPos);
-        dataBarRoot.setLayoutY(dataBarYPos);
-        //controller.target.getAnchorPane().getChildren().add(dataBarRoot);
+        dataBarRoot.setLayoutX((controller.canvas.getWidth()/2)-260);
+        dataBarRoot.setLayoutY(controller.canvas.getHeight()-150);
+        controller.canvas.addChildren(dataBarRoot);
+//        controller.canvas.set
+//        controller.target.getAnchorPane().getChildren().add(dataBarRoot);
+
+        // set placeholder on data bar field according to user selection (row/column)
+
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/ChartsBarView.fxml"));
+//        ChartsBarController chartsBarController = ChartsBarController.getInstance();
+//        chartsBarController.DataBarWindow = loader.load();
+
+
+//        CanvasPane a = new CanvasPane();
+//              a.addChildren(loader.load());
+//        Parent parent = loader.load();
+//        Stage stage = new Stage();
+//        stage.setScene(new Scene(parent));
+//        stage.show();
+//        DragResizeMod.makeResizable(parent);
+//        controller.canvas.addChildren(a);
+
+
 
         // set placeholder on data bar field according to user selection (row/column)
         if(row_or_column.getSelectedToggle() == rowRadio)
@@ -529,6 +535,7 @@ public class GraphController {
         }
 
     }
+
 
 
     private HBox createItem(String itemName) {
@@ -758,8 +765,8 @@ public class GraphController {
                 roundChart.setStyle("-fx-border-color: blue ; -fx-border-width: 0 ; ");
         });
 
-        //DragResizeMod.makeResizable(roundChart);
-        //controller.target.getAnchorPane().addChildren(roundChart);
+        DragResizeMod.makeResizable(roundChart);
+        controller.canvas.addChildren(roundChart);
     }
 
 
