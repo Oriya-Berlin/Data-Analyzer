@@ -6,7 +6,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 
+
 public class AnalyzerTableView extends TableView<Row> {
+
 
     private String tableName = null;
     private boolean isDataAdded;

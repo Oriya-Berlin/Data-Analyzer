@@ -33,6 +33,7 @@ public class Controller {
     Separator separator = new Separator();
 
     public GraphController graph;
+    public RoundGraphController roundGraph;
     public static Controller controller = null;
 
     double xCoordinate;
@@ -155,14 +156,14 @@ public class Controller {
 
             case "ringChartBtn":
                 if (isTableAdded)
-                    graph = new GraphController("RING_CHART", xCoordinate, yCoordinate);
+                    roundGraph = new RoundGraphController("RING_CHART", xCoordinate, yCoordinate);
                 else
                     AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
                 break;
 
             case "pieChartBtn":
                 if (isTableAdded)
-                    graph = new GraphController("PIE_CHART", xCoordinate, yCoordinate);
+                    roundGraph = new RoundGraphController("PIE_CHART", xCoordinate, yCoordinate);
                 else
                     AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
                 break;

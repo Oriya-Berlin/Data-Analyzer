@@ -6,8 +6,6 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
@@ -37,11 +35,6 @@ public class GraphController {
     public ToggleGroup row_or_column, multi_or_single;
     @FXML
     public RadioButton colRadio, rowRadio;
-
-
-    // TODO: that problem doesn't fixed yet
-    // the dataBar position on Canvas
-    private static final double dataBarYPos = 566, dataBarXPos = 400;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -313,7 +306,7 @@ public class GraphController {
 
 
     @FXML
-    public void dataBar_OK_btn(){
+    public void dataBar_OK_btn(){ /////////
 
         dataBarRoot.setVisible(false);
 
@@ -467,7 +460,7 @@ public class GraphController {
 
 
     @FXML
-    private void graphInterface_OK_btn(){
+    private void graphInterface_OK_btn(){  /////
 
         ArrayList<String> final_legends = extractLegendsFromLegendTextField();
 
