@@ -3,8 +3,10 @@ package Classes;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
+
 
 
 public class AnalyzerTableView extends TableView<Row> {
