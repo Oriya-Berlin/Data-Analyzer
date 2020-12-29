@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="419.0" prefWidth="691.0" style="-fx-border-color: black; -fx-background-color: white; -fx-border-width: 3px; -fx-border-radius: 12%;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RoundGraphController">
+    <children>
+        <VBox layoutX="31.0" layoutY="23.0" prefHeight="362.0" prefWidth="626.0">
+            <children>
+                <HBox prefHeight="64.0" prefWidth="626.0">
+                    <children>
+                        <Label prefHeight="56.0" prefWidth="443.0" text="Graphs Data Selection">
+                            <font>
+                                <Font name="Guttman Kav-Light" size="41.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="90.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox prefHeight="55.0" prefWidth="626.0">
+                    <children>
+                        <Button fx:id="select_Y_axis_btn" mnemonicParsing="false" onMouseClicked="#XY_Selection_btn" style="-fx-background-color: rgb(140,140,140); -fx-text-fill: white" text="Select Y Axis">
+                            <padding>
+                                <Insets left="8.0" right="8.0" />
+                            </padding>
+                            <font>
+                                <Font name="Guttman Kav-Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="15.0" />
+                            </HBox.margin>
+                        </Button>
+                        <HBox maxHeight="-Infinity" prefHeight="35.0" prefWidth="145.0" style="-fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 3%;">
+                            <HBox.margin>
+                                <Insets left="228.0" top="5.0" />
+                            </HBox.margin>
+                            <children>
+                                <JFXRadioButton fx:id="colRadio" onAction="#cleanGraphInterfaceFields" selected="true" text="Column">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="row_or_column" />
+                                    </toggleGroup>
+                                    <HBox.margin>
+                                        <Insets top="15.0" />
+                                    </HBox.margin>
+                                </JFXRadioButton>
+                                <JFXRadioButton fx:id="rowRadio" onAction="#cleanGraphInterfaceFields" text="Row" toggleGroup="$row_or_column">
+                                    <HBox.margin>
+                                        <Insets left="11.0" top="15.0" />
+                                    </HBox.margin>
+                                </JFXRadioButton>
+                            </children>
+                            <padding>
+                                <Insets bottom="6.0" left="5.0" top="-7.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="28.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="37.0" prefWidth="547.0">
+                    <children>
+                        <Label text="Y Axis Column Name:">
+                            <font>
+                                <Font name="Guttman Kav-Light" size="16.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <ListView fx:id="y_Selection_field" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" orientation="HORIZONTAL" prefHeight="25.0" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets left="6.0" />
+                            </HBox.margin>
+                        </ListView>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="11.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="45.0" prefWidth="626.0">
+                    <VBox.margin>
+                        <Insets top="4.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label prefHeight="23.0" prefWidth="156.0" text="Manual Legend:">
+                            <font>
+                                <Font name="Guttman Kav-Light" size="16.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="Legends_textField" prefHeight="25.0" prefWidth="440.0" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets left="11.0" />
+                            </HBox.margin>
+                        </ListView>
+                    </children>
+                </HBox>
+                <HBox prefHeight="74.0" prefWidth="626.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#graphInterface_OK_btn" style="-fx-background-color: rgb(140,140,140); -fx-text-fill: white" text="OK">
+                            <padding>
+                                <Insets left="8.0" right="8.0" />
+                            </padding>
+                            <font>
+                                <Font name="Guttman Kav-Light" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="285.0" top="28.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

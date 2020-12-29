@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
+<?import Classes.CanvasPane?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+   <children>
+      <TabPane fx:id="tabPane" prefHeight="83.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" >
+        <tabs>
+          <Tab text=" Main ">
+               <content>
+                  <HBox prefHeight="41.0" prefWidth="556.0" spacing="50.0">
+                     <children>
+                        <Button fx:id="nnnn" mnemonicParsing="false" text="Button1" onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                             <graphic>
+                                 <ImageView fitHeight="25" fitWidth="25" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@../Resources/table.png" />
+                                     </image>
+                                 </ImageView>
+                             </graphic>
+                         </Button>
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Exit" />
+                     </children>
+                     <padding >
+                        <Insets left="5.0" top="12.0" />
+                     </padding>
+                  </HBox >
+               </content>
+          </Tab>
+          <Tab text=" Data Analysis ">
+               <content>
+                  <HBox prefHeight="41.0" prefWidth="556.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                               <Button fx:id="table" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/table.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                              <Button mnemonicParsing="false" text="Browse..." prefHeight="40.0" prefWidth="80.0"/>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+
+                               <Button fx:id="lineChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/line_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="pieChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/pie_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="stackedBarChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/stacked_bar_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="barChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/bar_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="stackedAreaChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/stacked_area_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="horizontalBarChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/horizontal_bar_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="areaChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="35" fitWidth="35" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/area_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="ringChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/ring_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                               <Button fx:id="scatterChartBtn" prefHeight="40.0" prefWidth="40.0" mnemonicParsing="false"  onDragDetected="#onDragDetected" onDragDone="#onDragDone" onMouseReleased="#setOnDragDroppedHandle">
+                                   <graphic>
+                                       <ImageView fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@../Resources/scatter_chart.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+
+                           </children>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </HBox>
+
+                         <HBox spacing="5.0">
+                             <TextField fx:id="chartsBar" prefHeight="40.0" prefWidth="450.0" editable="false" />
+                             <Button fx:id="chartsBar_ok_btn" prefHeight="38.0" prefWidth="80.0" mnemonicParsing="false" style="-fx-background-color: rgb(255,0,0); -fx-text-fill: white;" text="OK">
+                             </Button>
+
+                             <HBox.margin>
+                                 <Insets top="5.0" left="680" right="10"/>
+                             </HBox.margin>
+                         </HBox>
+
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+            <Tab text=" Math ">
+              <content>
+<!--                <AnchorPane fx:id="mainBoard" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />-->
+<!--                  <AnchorPane fx:id="mainBoard" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />-->
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Separator fx:id="separator" layoutX="-7.0" layoutY="83.0" prefHeight="0.0" prefWidth="608.0" />
+       <CanvasPane fx:id="canvas" layoutX="0.0" layoutY="130.0" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: grey; " onDragOver="#setOnDragOverHandle" onDragDropped="#setOnDragDroppedHandle"/>
+   </children>
+</AnchorPane>
