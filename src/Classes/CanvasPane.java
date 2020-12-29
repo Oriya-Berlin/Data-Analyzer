@@ -1,19 +1,17 @@
 package Classes;
 
 
-import Controllers.GraphController;
 import javafx.scene.Node;
 import javafx.scene.chart.Chart;
 import javafx.scene.control.TableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
-
+import Controllers.*;
 
 
 public class CanvasPane extends AnchorPane {
 
     public void addChildren(Node node) {
-
         node.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode().equals(KeyCode.DELETE) && node.isFocused())
             {
