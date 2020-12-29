@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="mySQL handle" />
+    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="before merge">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/ExecuteCommandView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/AlertsMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/AnalyzerTableView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/CanvasPane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/ChartsDataHandling.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$OnDragResizeEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$S.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/PercentagePieChart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/RingChart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/Row.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/RowCellValueFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Controllers/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Controllers/GraphController$RowMouseClickedEventHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Controllers/GraphController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="new_architecture" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">

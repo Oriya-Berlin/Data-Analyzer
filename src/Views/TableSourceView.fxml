@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controllers.TableSourceController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableSourceController">
   <tabs>
     <Tab text=" Localhost ">
       <content>
@@ -20,6 +21,7 @@
                      <children>
                         <VBox alignment="CENTER_LEFT" prefHeight="234.0" prefWidth="101.0" spacing="30.0">
                            <children>
+                              <Label text="Label" />
                               <Label text="User Name: " />
                               <Label text="Password: " />
                               <Label text="Adress: " />
@@ -27,6 +29,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
+                              <ComboBox prefWidth="344.0" promptText="MySQL" visibleRowCount="30" />
                               <TextField fx:id="local_username_tf" />
                               <TextField fx:id="local_password_tf" />
                               <TextField fx:id="local_adress_tf" />
@@ -42,7 +45,7 @@
                   <HBox alignment="BOTTOM_CENTER" layoutX="31.0" layoutY="285.0" prefHeight="49.0" prefWidth="435.0" spacing="220.0">
                      <children>
                         <Button mnemonicParsing="false" prefWidth="100.0" text="Cancel" />
-                        <Button fx:id="local_btn" mnemonicParsing="false" prefWidth="100.0" text="Connect" onAction="#Connect"/>
+                        <Button fx:id="local_btn" mnemonicParsing="false" onAction="#Connect" prefWidth="100.0" text="Connect" />
                      </children>
                   </HBox>
                </children></AnchorPane>
@@ -56,6 +59,7 @@
                      <children>
                         <VBox alignment="CENTER_LEFT" prefHeight="234.0" prefWidth="101.0" spacing="30.0">
                            <children>
+                              <Label text="Label" />
                               <Label text="User Name: " />
                               <Label text="Password: " />
                               <Label text="Adress: " />
@@ -63,9 +67,10 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
-                              <TextField fx:id="remote_username_tf"/>
-                              <TextField fx:id="remote_password_tf"/>
-                              <TextField fx:id="remote_adress_tf"/>
+                              <ComboBox prefWidth="344.0" promptText="MySQL" visibleRowCount="30" />
+                              <TextField fx:id="remote_username_tf" />
+                              <TextField fx:id="remote_password_tf" />
+                              <TextField fx:id="remote_adress_tf" />
                            </children>
                         </VBox>
                      </children>
@@ -78,7 +83,7 @@
                   <HBox alignment="BOTTOM_CENTER" layoutX="31.0" layoutY="285.0" prefHeight="49.0" prefWidth="435.0" spacing="220.0">
                      <children>
                         <Button mnemonicParsing="false" prefWidth="100.0" text="Cancel" />
-                        <Button fx:id="remote_btn" mnemonicParsing="false" prefWidth="100.0" text="Connect" onAction="#Connect" />
+                        <Button fx:id="remote_btn" mnemonicParsing="false" onAction="#Connect" prefWidth="100.0" text="Connect" />
                      </children>
                   </HBox>
                </children>

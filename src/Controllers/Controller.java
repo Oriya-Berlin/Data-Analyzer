@@ -275,4 +275,46 @@ public class Controller {
 
         return tableA;
     }
+
+
+
+    @FXML
+    private void BrowseDB(){
+
+    }
+
+
+
+    @FXML
+    private void ExecuteCommand(){
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
