@@ -18,12 +18,12 @@ public class Main extends Application {
         primaryStage.show();
 
 
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/TableSourceView.fxml"));
-        Scene scene = new Scene(myLoader.load());
-        Stage stage = new Stage();
-        stage.setTitle("Connection");
-        stage.setScene(scene);
-        stage.show();
+//        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/TableSourceView.fxml"));
+//        Scene scene = new Scene(myLoader.load());
+//        Stage stage = new Stage();
+//        stage.setTitle("Connection");
+//        stage.setScene(scene);
+//        stage.show();
 
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/TableSourceView.fxml"));
 //        AnchorPane root2 = loader.load();

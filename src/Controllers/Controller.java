@@ -5,7 +5,9 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TabPane;
@@ -14,8 +16,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -35,6 +39,7 @@ public class Controller {
     public GraphController graph;
     public RoundGraphController roundGraph;
     public static Controller controller = null;
+    public ArrayList<AnalyzerTableView> tables = new ArrayList<AnalyzerTableView>();
 
     double xCoordinate;
     double yCoordinate;
@@ -98,8 +103,18 @@ public class Controller {
                     //TODO: add table window here
                     AnalyzerTableView table = new AnalyzerTableView();
                     table = createDefaultTable();
+                    table.setLayoutX(xCoordinate);
+                    table.setLayoutY(yCoordinate);
+
+
                     DragResizeMod.makeResizable(table);
                     canvas.addChildren(table);
+                    setTableNameWindow();
+
+                    TableNameController tableNameController = TableNameController.getInstance();
+                    String tableName = tableNameController.getTableName();
+                    table.setTableName(tableName);
+                    tables.add(table);
                 }
                 else
                     AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
@@ -193,7 +208,7 @@ public class Controller {
     // data for example
     public AnalyzerTableView createDefaultTable() {
 
-        AnalyzerTableView tableA = new AnalyzerTableView("TableA");
+        AnalyzerTableView tableA = new AnalyzerTableView();
         ObservableList<Row> table_dataA;
 
         // populate the data for table A
@@ -279,22 +294,47 @@ public class Controller {
 
 
     @FXML
-    private void BrowseDB(){
+    private void BrowseDB() throws IOException {
+
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/TableSourceView.fxml"));
+        Scene scene = new Scene(myLoader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Table Name");
+        stage.setScene(scene);
+        stage.show();
 
     }
 
 
 
     @FXML
-    private void ExecuteCommand(){
+    private void ExecuteCommand() throws IOException {
+
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/ExecuteCommandView.fxml"));
+        Scene scene = new Scene(myLoader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Table Name");
+        stage.setScene(scene);
+        stage.show();
 
     }
 
 
 
+    private void setTableNameWindow() throws IOException {
+
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/TableNameView.fxml"));
+        Scene scene = new Scene(myLoader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Table Name");
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
 
 
-
+    public ArrayList<AnalyzerTableView> getTables(){
+        return tables;
+    }
 
 
 

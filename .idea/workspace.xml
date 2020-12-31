@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="before merge">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/ExecuteCommandView.fxml" afterDir="false" />
+    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="add some views">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/AlertsMaker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/AnalyzerTableView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/CanvasPane.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/ChartsDataHandling.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$OnDragResizeEventListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod$S.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/DragResizeMod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/PercentagePieChart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/RingChart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/Row.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Classes/RowCellValueFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Controllers/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Controllers/GraphController$RowMouseClickedEventHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data Analyzer/Controllers/GraphController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/AlertsMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/AlertsMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/AnalyzerTableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/AnalyzerTableView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/CanvasPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/CanvasPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/TableNameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/TableNameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/TableNameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TableNameView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609190128303</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add some views">
+      <created>1609270046642</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609270046642</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +147,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intellij bug handling" />
     <MESSAGE value="mySQL handle" />
-    <option name="LAST_COMMIT_MESSAGE" value="mySQL handle" />
+    <MESSAGE value="add some views" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some views" />
   </component>
 </project>

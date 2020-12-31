@@ -8,10 +8,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import Controllers.*;
 
+import java.util.ArrayList;
+
 
 public class CanvasPane extends AnchorPane {
 
     public void addChildren(Node node) {
+
         node.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode().equals(KeyCode.DELETE) && node.isFocused())
             {
@@ -28,9 +31,13 @@ public class CanvasPane extends AnchorPane {
                     }
 
                     // if we close some table, it will remove it from 'tables' array and from canvas
-                    if (node instanceof TableView)
+                    if (node instanceof AnalyzerTableView)
                     {
-                        // TODO : handle that later
+                        Controller controller = Controller.getInstance();
+                        ArrayList<AnalyzerTableView> tables = controller.getTables();
+                        System.out.println(tables);
+                        tables.remove(node);
+                        System.out.println(tables);
                     }
 
                     this.getChildren().remove(node);

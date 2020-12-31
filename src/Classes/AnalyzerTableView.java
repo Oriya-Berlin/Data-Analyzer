@@ -16,10 +16,6 @@ public class AnalyzerTableView extends TableView<Row> {
     private boolean isDataAdded;
 
 
-    public AnalyzerTableView(String tableName){
-        this.tableName = tableName;
-        this.isDataAdded = false;
-    }
 
     public AnalyzerTableView(){
         this.tableName = "";
@@ -48,4 +44,7 @@ public class AnalyzerTableView extends TableView<Row> {
     }
 
 
+    public String toString(){
+        return this.tableName;
+    }
 }
