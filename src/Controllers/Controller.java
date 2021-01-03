@@ -44,6 +44,7 @@ public class Controller {
     double xCoordinate;
     double yCoordinate;
 
+    boolean isTableAdded = false;
 
 
     @FXML
@@ -54,6 +55,10 @@ public class Controller {
             xCoordinate = event.getX() - 135;
             yCoordinate = event.getY() - 135;
         }
+        String btnId = ((Button) event.getGestureSource()).getId();
+        if(btnId.equals("table"))
+            isTableAdded = true;
+
     }
 
 
@@ -93,7 +98,7 @@ public class Controller {
     public void onDragDone(DragEvent event) throws IOException {
 
 //        GraphController graph;
-        boolean isTableAdded = true;
+
         String btnId = ((Button) event.getGestureSource()).getId();
 
         switch (btnId) {
@@ -116,8 +121,8 @@ public class Controller {
                     table.setTableName(tableName);
                     tables.add(table);
                 }
-                else
-                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
+//                else
+//                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
                 break;
 
             case "lineChartBtn":
@@ -299,7 +304,7 @@ public class Controller {
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/TableSourceView.fxml"));
         Scene scene = new Scene(myLoader.load());
         Stage stage = new Stage();
-        stage.setTitle("Table Name");
+        stage.setTitle("Table Source");
         stage.setScene(scene);
         stage.show();
 
@@ -313,7 +318,7 @@ public class Controller {
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("../Views/ExecuteCommandView.fxml"));
         Scene scene = new Scene(myLoader.load());
         Stage stage = new Stage();
-        stage.setTitle("Table Name");
+        stage.setTitle("Execute Command");
         stage.setScene(scene);
         stage.show();
 

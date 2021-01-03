@@ -34,8 +34,8 @@
                                        </ImageView>
                                    </graphic>
                                </Button>
-                              <Button fx:id="browseDB_btn" mnemonicParsing="false" text="Browse DB" prefHeight="40.0" prefWidth="90.0"/>
-                              <Button fx:id="executeCMD_btn" mnemonicParsing="false" text="Execute Command" prefHeight="40.0" prefWidth="155.0"/>
+                              <Button fx:id="browseDB_btn" mnemonicParsing="false" text="Browse DB" prefHeight="40.0" prefWidth="90.0" onAction="#BrowseDB"/>
+                              <Button fx:id="executeCMD_btn" mnemonicParsing="false" text="Execute Command" prefHeight="40.0" prefWidth="155.0" onAction="#ExecuteCommand"/>
                            </children>
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />

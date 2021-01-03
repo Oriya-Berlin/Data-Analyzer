@@ -4,10 +4,12 @@ import Classes.MySQL;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class TableSourceController {
 
@@ -17,10 +19,20 @@ public class TableSourceController {
     TextField remote_username_tf, remote_password_tf, remote_adress_tf;
     @FXML
     Button local_btn, remote_btn;
+    @FXML
+    ComboBox comboBox;
 
 
     public static TableSourceController tableSourceController = null;
     public static Object DB_connection = null;
+    public ArrayList<Object> connections = new ArrayList<>();
+
+
+    public enum ConnectionsType{
+        MySQL,
+        MSSQL,
+        MongoDB,
+    }
 
     // TODO: we need to add also oracle, sql server, etc
     // TODO: handle ports
@@ -29,6 +41,10 @@ public class TableSourceController {
     @FXML
     public void initialize() {
         tableSourceController = this;
+
+        for (ConnectionsType type : ConnectionsType.values())
+            comboBox.getItems().add(type);
+
     }
 
 
@@ -65,7 +81,7 @@ public class TableSourceController {
 
         // TODO: add 'switch' for all the others
         DB_connection = new MySQL(adress, username, password);
-
+        connections.add(DB_connection);
         // TEST
 //        ResultSet rs = ((MySQL) DB_connection).setCommandAndGetResultSet("select * from Persons");
 //        System.out.println(((MySQL) DB_connection).isConnected());

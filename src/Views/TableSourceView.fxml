@@ -29,7 +29,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
-                              <ComboBox prefWidth="344.0" promptText="MySQL" visibleRowCount="30" />
+                              <ComboBox fx:id="comboBox" prefWidth="344.0" visibleRowCount="30" />
                               <TextField fx:id="local_username_tf" />
                               <TextField fx:id="local_password_tf" />
                               <TextField fx:id="local_adress_tf" />
