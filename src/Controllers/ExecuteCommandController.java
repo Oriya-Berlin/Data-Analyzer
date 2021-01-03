@@ -4,6 +4,7 @@ import Classes.AnalyzerTableView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 
 import java.util.ArrayList;
@@ -15,6 +16,9 @@ public class ExecuteCommandController {
     ComboBox comboBox;
     @FXML
     TextArea sqlCommandTextArea;
+    @FXML
+    TableView<Object> tableFrames; // here we need to put connections in <>
+
 
 
     @FXML

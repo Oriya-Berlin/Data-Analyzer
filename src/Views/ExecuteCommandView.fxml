@@ -55,7 +55,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="200.0">
                <children>
-                  <TableView prefHeight="120.0" prefWidth="600.0">
+                  <TableView fx:id="tableFrames" prefHeight="120.0" prefWidth="600.0">
                     <columns>
                       <TableColumn prefWidth="125" text="DB Name" />
                       <TableColumn prefWidth="125" text="DB Type" />
