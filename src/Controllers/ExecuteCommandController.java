@@ -1,6 +1,9 @@
 package Controllers;
 
 import Classes.AnalyzerTableView;
+import Classes.Frame;
+import Classes.MySQL;
+import Classes.Row;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -30,6 +33,16 @@ public class ExecuteCommandController {
         for(AnalyzerTableView table : tables)
             comboBox.getItems().add(table.getTableName());
 
+
+        TableSourceController tableSourceController = TableSourceController.getInstance();
+        ArrayList<Frame> frames = tableSourceController.getFrames();
+
+        for (Frame frane: frames){
+            tableFrames.getItems().addAll(1,3,4,5);  // ((MySQL)connection).
+        }
+//        Row row = tableFrames.getItems().get(2); // find out how to add row
+        // build function to get row from any connection object
+        tableFrames.getItems().addAll(1,2,3,4);
     }
 
 

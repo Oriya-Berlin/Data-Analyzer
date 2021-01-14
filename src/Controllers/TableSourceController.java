@@ -1,5 +1,6 @@
 package Controllers;
 
+import Classes.Frame;
 import Classes.GeneralConnection;
 import Classes.MySQL;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.stage.Stage;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 
 public class TableSourceController {
 
@@ -28,8 +30,8 @@ public class TableSourceController {
 
 
     public static TableSourceController tableSourceController = null;
-    public static Object DB_connection = null;
-    public ArrayList<GeneralConnection> connections = new ArrayList<>();
+//    public static Object DB_connection = null;
+    public ArrayList<Frame> frames = new ArrayList<>();
 
     public enum ConnectionsType{
         MySQL,
@@ -96,8 +98,9 @@ public class TableSourceController {
         switch (connectionType){
 
             case "MySQL":
-                DB_connection = new MySQL(address, username, password);
-                //connections.add(DB_connection);
+                MySQL DB_connection = new MySQL(address, username, password);
+                System.out.println(DB_connection.getClass());
+                frames.add(DB_connection);
                 break;
 
             case "MSSQL":
@@ -118,6 +121,10 @@ public class TableSourceController {
 
     }
 
+
+    public ArrayList<Frame> getFrames(){
+        return frames;
+    }
 
 
 

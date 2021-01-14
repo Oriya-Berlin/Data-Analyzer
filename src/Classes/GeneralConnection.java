@@ -1,13 +1,19 @@
 package Classes;
 
+import java.sql.SQLException;
+
 public class GeneralConnection {
 
     private String DbType;
     private boolean isConnected;
 
     public GeneralConnection(String dbType, boolean isConnected) {
-        DbType = dbType;
+        this.DbType = dbType;
         this.isConnected = isConnected;
+    }
+
+    public GeneralConnection() {
+
     }
 
     public String getDbType() {
@@ -18,7 +24,7 @@ public class GeneralConnection {
         DbType = dbType;
     }
 
-    public boolean isConnected() {
+    public boolean isConnected() throws SQLException {
         return isConnected;
     }
 

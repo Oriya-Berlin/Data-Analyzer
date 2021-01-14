@@ -4,7 +4,8 @@ import com.mysql.jdbc.ResultSetImpl;
 import java.sql.*;
 
 
-public class MySQL {
+
+public class MySQL extends Frame{
 
     private String USERNAME;
     private String PASSWORD;
@@ -12,19 +13,26 @@ public class MySQL {
     private Connection connection = null;
     private ResultSet resultSet = null;
     private Statement statement = null;
+    private String DbType;
+    private boolean isConnected;
 
 
-    public MySQL(String connectionString, String username, String password){
+
+    public MySQL(String connectionString, String username, String password) throws SQLException {
+        super();
 
         this.USERNAME = username;
         this.PASSWORD = password;
         this.connectionString = connectionString;
+        this.DbType = "MySQL";
+
 
         try
         {
             this.connection = DriverManager.getConnection("jdbc:mysql://" + connectionString, username, password);
             this.statement = connection.createStatement(ResultSetImpl.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             this.resultSet = null;
+            this.isConnected = true;
         }
         catch (SQLException e)
         {
