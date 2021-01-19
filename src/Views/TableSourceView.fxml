@@ -11,38 +11,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableSourceController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableSourceController">
   <tabs>
     <Tab text=" Localhost ">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <HBox layoutX="26.0" layoutY="51.0" prefHeight="234.0" prefWidth="448.0">
+                  <HBox layoutX="27.0" layoutY="88.0" prefHeight="234.0" prefWidth="448.0">
                      <children>
                         <VBox alignment="CENTER_LEFT" prefHeight="234.0" prefWidth="101.0" spacing="30.0">
                            <children>
-                              <Label text="Label" />
+                              <Label text="DB Type: " />
                               <Label text="User Name: " />
                               <Label text="Password: " />
                               <Label text="Address: " />
+                              <Label text="Conn Name:" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
-                              <ComboBox fx:id="LocalComboBox" prefWidth="344.0" visibleRowCount="30" />
+                              <ComboBox fx:id="local_ComboBox" prefWidth="344.0" visibleRowCount="30" />
                               <TextField fx:id="local_username_tf" />
                               <TextField fx:id="local_password_tf" />
                               <TextField fx:id="local_address_tf" />
+                              <TextField fx:id="local_connName_tf"/>
                            </children>
                         </VBox>
                      </children>
                   </HBox>
-                  <Label layoutX="176.0" layoutY="20.0" text="Localhost">
+                  <Label layoutX="177.0" layoutY="22.0" text="Localhost">
                      <font>
                         <Font size="31.0" />
                      </font>
                   </Label>
-                  <HBox alignment="BOTTOM_CENTER" layoutX="31.0" layoutY="285.0" prefHeight="49.0" prefWidth="435.0" spacing="220.0">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="33.0" layoutY="327.0" prefHeight="49.0" prefWidth="435.0" spacing="220.0">
                      <children>
                         <Button mnemonicParsing="false" prefWidth="100.0" text="Cancel" />
                         <Button fx:id="local_btn" mnemonicParsing="false" onAction="#Connect" prefWidth="100.0" text="Connect" />
@@ -55,22 +57,24 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <HBox layoutX="26.0" layoutY="51.0" prefHeight="234.0" prefWidth="448.0">
+                  <HBox layoutX="27.0" layoutY="88.0" prefHeight="234.0" prefWidth="448.0">
                      <children>
                         <VBox alignment="CENTER_LEFT" prefHeight="234.0" prefWidth="101.0" spacing="30.0">
                            <children>
-                              <Label text="Label" />
+                              <Label text="DB Type:" />
                               <Label text="User Name: " />
                               <Label text="Password: " />
                               <Label text="Address: " />
+                              <Label text="Conn Name:" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
-                              <ComboBox fx:id="RemoteComboBox" prefWidth="344.0" visibleRowCount="30" />
+                              <ComboBox fx:id="remote_ComboBox" prefWidth="344.0" visibleRowCount="30" />
                               <TextField fx:id="remote_username_tf" />
                               <TextField fx:id="remote_password_tf" />
                               <TextField fx:id="remote_address_tf" />
+                              <TextField fx:id="remote_connName_tf"/>
                            </children>
                         </VBox>
                      </children>
@@ -80,7 +84,7 @@
                         <Font size="31.0" />
                      </font>
                   </Label>
-                  <HBox alignment="BOTTOM_CENTER" layoutX="31.0" layoutY="285.0" prefHeight="49.0" prefWidth="435.0" spacing="220.0">
+                  <HBox alignment="BOTTOM_CENTER" layoutX="33.0" layoutY="327.0" prefHeight="49.0" prefWidth="435.0" spacing="220.0">
                      <children>
                         <Button mnemonicParsing="false" prefWidth="100.0" text="Cancel" />
                         <Button fx:id="remote_btn" mnemonicParsing="false" onAction="#Connect" prefWidth="100.0" text="Connect" />

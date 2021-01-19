@@ -5,7 +5,7 @@ import java.sql.*;
 
 
 
-public class MySQL extends Frame{
+public class MySQL extends GeneralConnection{
 
     private String USERNAME;
     private String PASSWORD;
@@ -18,9 +18,9 @@ public class MySQL extends Frame{
 
 
 
-    public MySQL(String connectionString, String username, String password) throws SQLException {
-        super();
+    public MySQL(String connectionName, String connectionString, String username, String password) throws SQLException {
 
+        super(connectionName);
         this.USERNAME = username;
         this.PASSWORD = password;
         this.connectionString = connectionString;

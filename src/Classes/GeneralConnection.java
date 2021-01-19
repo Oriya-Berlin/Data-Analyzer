@@ -1,34 +1,25 @@
 package Classes;
 
-import java.sql.SQLException;
 
+// TODO: maybe make it abstract class, and then override it
 public class GeneralConnection {
 
-    private String DbType;
-    private boolean isConnected;
+    private String connectionName;
 
-    public GeneralConnection(String dbType, boolean isConnected) {
-        this.DbType = dbType;
-        this.isConnected = isConnected;
+
+    public GeneralConnection(String connectionName) {
+        this.connectionName = connectionName;
     }
 
-    public GeneralConnection() {
 
+    public String getConnectionName(){
+        return this.connectionName;
     }
 
-    public String getDbType() {
-        return DbType;
+
+    @Override
+    public String toString() {
+        return this.connectionName;
     }
 
-    public void setDbType(String dbType) {
-        DbType = dbType;
-    }
-
-    public boolean isConnected() throws SQLException {
-        return isConnected;
-    }
-
-    public void setConnected(boolean connected) {
-        isConnected = connected;
-    }
 }

@@ -19,7 +19,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -39,7 +38,6 @@ public class Controller {
     public GraphController graph;
     public RoundGraphController roundGraph;
     public static Controller controller = null;
-    public ArrayList<AnalyzerTableView> tables = new ArrayList<AnalyzerTableView>();
 
     double xCoordinate;
     double yCoordinate;
@@ -119,7 +117,8 @@ public class Controller {
                     TableNameController tableNameController = TableNameController.getInstance();
                     String tableName = tableNameController.getTableName();
                     table.setTableName(tableName);
-                    tables.add(table);
+                    TablesRegistry tables = TablesRegistry.getInstance();
+                    tables.set(tableName, table);
                 }
 //                else
 //                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
@@ -335,31 +334,6 @@ public class Controller {
         stage.setScene(scene);
         stage.showAndWait();
     }
-
-
-    public ArrayList<AnalyzerTableView> getTables(){
-        return tables;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

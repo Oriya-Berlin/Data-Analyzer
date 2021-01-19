@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="db types functionality added">
-      <change afterPath="$PROJECT_DIR$/src/Classes/ConnectionsRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/Frame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/TablesRegistry.java" afterDir="false" />
+    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="added registry for tables and connections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/CanvasPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/CanvasPane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/MySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/MySQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/TableSourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/TableSourceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/CanvasPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/CanvasPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/ConnectionsRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/ConnectionsRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/GeneralConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/GeneralConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/TablesRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/TablesRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/TableSourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/TableSourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Data-Structures-Implementaion" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Views" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -66,6 +70,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Classes" />
@@ -152,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609711496095</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added registry for tables and connections">
+      <created>1610643636502</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610643636502</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,6 +188,7 @@
     <MESSAGE value="tables stuff added" />
     <MESSAGE value="db types stuff added" />
     <MESSAGE value="db types functionality added" />
-    <option name="LAST_COMMIT_MESSAGE" value="db types functionality added" />
+    <MESSAGE value="added registry for tables and connections" />
+    <option name="LAST_COMMIT_MESSAGE" value="added registry for tables and connections" />
   </component>
 </project>

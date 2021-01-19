@@ -1,57 +1,66 @@
 package Controllers;
 
-import Classes.AnalyzerTableView;
-import Classes.Frame;
-import Classes.MySQL;
-import Classes.Row;
+import Classes.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
+
 
 public class ExecuteCommandController {
 
 
     @FXML
-    ComboBox comboBox;
+    ComboBox<String> comboBox;
     @FXML
     TextArea sqlCommandTextArea;
     @FXML
-    TableView<Object> tableFrames; // here we need to put connections in <>
+    TableView<GeneralConnection> tableFrames;
 
+
+    public static ExecuteCommandController instance = null;
 
 
     @FXML
     public void initialize() {
 
-        Controller controller = Controller.getInstance();
-        ArrayList<AnalyzerTableView> tables = controller.getTables();
+        instance = this;
 
-        for(AnalyzerTableView table : tables)
-            comboBox.getItems().add(table.getTableName());
+        TablesRegistry instance = TablesRegistry.getInstance();
+        HashMap<String,AnalyzerTableView> tables = instance.getItems();
+
+        for(String tableName : tables.keySet())
+            comboBox.getItems().add(tableName);
 
 
-        TableSourceController tableSourceController = TableSourceController.getInstance();
-        ArrayList<Frame> frames = tableSourceController.getFrames();
 
-        for (Frame frane: frames){
-            tableFrames.getItems().addAll(1,3,4,5);  // ((MySQL)connection).
+        ConnectionsRegistry connectionsRegistry = ConnectionsRegistry.getInstance();
+        HashMap<String, GeneralConnection> connections = connectionsRegistry.getItems();
+
+        for(GeneralConnection conn: connections.values()){
+            System.out.println();
+            tableFrames.getItems().add(conn);
         }
-//        Row row = tableFrames.getItems().get(2); // find out how to add row
-        // build function to get row from any connection object
-        tableFrames.getItems().addAll(1,2,3,4);
+
     }
 
 
     @FXML
     private void executeCommandBtn(){
         String command = sqlCommandTextArea.getText();
+        // TODO: to be continue...
     }
 
 
+    public static ExecuteCommandController getInstance(){
+        return instance;
+    }
 
 
+    public ComboBox<String> getComboBox(){
+        return comboBox;
+    }
 }

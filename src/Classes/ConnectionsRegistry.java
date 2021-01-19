@@ -2,14 +2,14 @@ package Classes;
 
 import java.util.HashMap;
 
-public class ConnectionsRegistry <K,V>{
+public class ConnectionsRegistry {
 
     public static ConnectionsRegistry instance = null;
-    HashMap<K,V> items;
+    HashMap<String,GeneralConnection> items;
 
 
     private ConnectionsRegistry(){
-        items = new HashMap<K, V>();
+        items = new HashMap<>();
     }
 
 
@@ -27,14 +27,18 @@ public class ConnectionsRegistry <K,V>{
     }
 
 
-    public V get(K key){
+    public GeneralConnection get(String key){
         return items.get(key);
     }
 
 
-    public void set(K key, V value){
+    public void set(String key, GeneralConnection value){
         items.put(key, value);
     }
 
+
+    public HashMap<String,GeneralConnection> getItems(){
+        return items;
+    }
 
 }

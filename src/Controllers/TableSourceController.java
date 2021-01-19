@@ -1,7 +1,6 @@
 package Controllers;
 
-import Classes.Frame;
-import Classes.GeneralConnection;
+import Classes.ConnectionsRegistry;
 import Classes.MySQL;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,9 +10,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 
 
 public class TableSourceController {
@@ -22,16 +21,17 @@ public class TableSourceController {
     @FXML
     TextField local_username_tf, local_password_tf, local_address_tf;
     @FXML
+    TextField local_connName_tf, remote_connName_tf;
+    @FXML
     TextField remote_username_tf, remote_password_tf, remote_address_tf;
     @FXML
     Button local_btn, remote_btn;
     @FXML
-    ComboBox<String> LocalComboBox, RemoteComboBox;
+    ComboBox<String> local_ComboBox, remote_ComboBox;
 
 
     public static TableSourceController tableSourceController = null;
-//    public static Object DB_connection = null;
-    public ArrayList<Frame> frames = new ArrayList<>();
+
 
     public enum ConnectionsType{
         MySQL,
@@ -48,8 +48,8 @@ public class TableSourceController {
         tableSourceController = this;
 
         for (ConnectionsType type : ConnectionsType.values()) {
-            RemoteComboBox.getItems().add(String.valueOf(type));
-            LocalComboBox.getItems().add(String.valueOf(type));
+            remote_ComboBox.getItems().add(String.valueOf(type));
+            local_ComboBox.getItems().add(String.valueOf(type));
         }
     }
 
@@ -69,38 +69,40 @@ public class TableSourceController {
         String username = "";
         String password = "";
         String address = "";
+        String connectionName = "";
 
 
         // TODO: we need to add input validation
 
         if(btn.getId().equals("local_btn"))
         {
-            connectionType = LocalComboBox.getValue();
-            System.out.println(connectionType);
+            connectionType = local_ComboBox.getValue();
             username = local_username_tf.getText();
             password = local_password_tf.getText();
             address = local_address_tf.getText();
+            connectionName = local_connName_tf.getText();
         }
 
         if(btn.getId().equals("remote_btn"))
         {
-            connectionType = RemoteComboBox.getValue();
+            connectionType = remote_ComboBox.getValue();
             username = remote_username_tf.getText();
             password = remote_password_tf.getText();
             address = remote_address_tf.getText();
+            connectionName = remote_connName_tf.getText();
         }
 
 
         Stage window = (Stage) ((Node)actionEvent.getTarget()).getScene().getWindow();
         window.close();
 
+        ConnectionsRegistry connections = ConnectionsRegistry.getInstance();
 
         switch (connectionType){
 
             case "MySQL":
-                MySQL DB_connection = new MySQL(address, username, password);
-                System.out.println(DB_connection.getClass());
-                frames.add(DB_connection);
+                MySQL connection = new MySQL(connectionName, address, username, password);
+                connections.set(connectionName, connection);
                 break;
 
             case "MSSQL":
@@ -121,10 +123,6 @@ public class TableSourceController {
 
     }
 
-
-    public ArrayList<Frame> getFrames(){
-        return frames;
-    }
 
 
 

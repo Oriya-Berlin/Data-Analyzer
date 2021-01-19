@@ -2,14 +2,14 @@ package Classes;
 
 import java.util.HashMap;
 
-public class TablesRegistry <K,V>{
+public class TablesRegistry {
 
     private static TablesRegistry instance = null;
-    HashMap<K,V> items = null;
+    HashMap<String,AnalyzerTableView> items = null;
 
 
     private TablesRegistry(){
-        items = new HashMap<K, V>();
+        items = new HashMap<>();
     }
 
 
@@ -27,15 +27,24 @@ public class TablesRegistry <K,V>{
     }
 
 
-    public V get(K key){
+    public AnalyzerTableView get(String key){
         return items.get(key);
     }
 
 
-    public void set(K key, V value){
+    public void set(String key, AnalyzerTableView value){
         items.put(key, value);
     }
 
+
+    public void remove(String key){
+        items.remove(key);
+    }
+
+
+    public HashMap<String,AnalyzerTableView> getItems(){
+        return items;
+    }
 
 
 }
