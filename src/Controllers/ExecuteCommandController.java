@@ -1,12 +1,18 @@
 package Controllers;
 
 import Classes.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 
+import java.sql.SQLException;
 import java.util.HashMap;
 
 
@@ -18,40 +24,55 @@ public class ExecuteCommandController {
     @FXML
     TextArea sqlCommandTextArea;
     @FXML
-    TableView<GeneralConnection> tableFrames;
+    TableView<GeneralConnection> framesTable;
 
 
     public static ExecuteCommandController instance = null;
 
+    // TODO: need to check if to put that in 'initialize' function
+    TablesRegistry tablesRegistryInstance = TablesRegistry.getInstance();
+    ConnectionsRegistry connectionsRegistry = ConnectionsRegistry.getInstance();
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
 
         instance = this;
 
-        TablesRegistry instance = TablesRegistry.getInstance();
-        HashMap<String,AnalyzerTableView> tables = instance.getItems();
 
-        for(String tableName : tables.keySet())
-            comboBox.getItems().add(tableName);
+        // add tables name to combo box
+        HashMap<String,AnalyzerTableView> tables = tablesRegistryInstance.getItems();
+
+        for(AnalyzerTableView table: tables.values())
+            comboBox.getItems().add(table.toString());
 
 
-
-        ConnectionsRegistry connectionsRegistry = ConnectionsRegistry.getInstance();
+        // add all the connections to frames table
+        initializeFramesTable();
+//        ConnectionsRegistry connectionsRegistry = ConnectionsRegistry.getInstance();
         HashMap<String, GeneralConnection> connections = connectionsRegistry.getItems();
 
-        for(GeneralConnection conn: connections.values()){
-            System.out.println();
-            tableFrames.getItems().add(conn);
-        }
+        for(GeneralConnection conn: connections.values())
+            framesTable.getItems().add(conn);
 
     }
 
 
     @FXML
     private void executeCommandBtn(){
+
+        GeneralConnection selectedConnection = framesTable.getSelectionModel().getSelectedItem();
         String command = sqlCommandTextArea.getText();
+        String selectedTableName = comboBox.getValue();
+        AnalyzerTableView selectedTable = tablesRegistryInstance.get(selectedTableName);
+
         // TODO: to be continue...
+    }
+
+
+    @FXML
+    private void cancelBtn(ActionEvent actionEvent){
+        Stage window = (Stage) ((Node)actionEvent.getTarget()).getScene().getWindow();
+        window.close();
     }
 
 
@@ -63,4 +84,27 @@ public class ExecuteCommandController {
     public ComboBox<String> getComboBox(){
         return comboBox;
     }
+
+
+    private void initializeFramesTable(){
+
+        TableColumn connName = new TableColumn<>("Conn Name");
+        connName.setCellValueFactory(new PropertyValueFactory<>("connectionName"));
+
+        TableColumn dbType = new TableColumn<>("DB Type");
+        dbType.setCellValueFactory(new PropertyValueFactory<>("DbType"));
+
+        TableColumn address = new TableColumn<>("Address");
+        address.setCellValueFactory(new PropertyValueFactory<>("connectionString"));
+
+        TableColumn isConnected = new TableColumn<>("Connected");
+        isConnected.setCellValueFactory(new PropertyValueFactory<>("isConnected"));
+
+
+
+        framesTable.getColumns().addAll(connName, dbType, address, isConnected);
+    }
+
+
+
 }

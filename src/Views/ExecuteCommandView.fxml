@@ -55,24 +55,24 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="200.0">
                <children>
-                  <TableView fx:id="tableFrames" prefHeight="120.0" prefWidth="600.0">
-                    <columns>
-                      <TableColumn prefWidth="125" text="DB Name" />
-                      <TableColumn prefWidth="125" text="DB Type" />
-                       <TableColumn prefWidth="250" text="Address" />
-                       <TableColumn prefWidth="100" text="Connected" />
-                    </columns>
+                  <TableView fx:id="framesTable" prefHeight="120.0" prefWidth="600.0">
+<!--                    <columns>-->
+<!--                      <TableColumn prefWidth="125" text="Conn Name" />-->
+<!--                      <TableColumn prefWidth="125" text="DB Type" />-->
+<!--                       <TableColumn prefWidth="250" text="Address" />-->
+<!--                       <TableColumn prefWidth="100" text="Connected" />-->
+<!--                    </columns>-->
                   </TableView>
                </children>
             </HBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="93.0" prefWidth="700.0" spacing="300.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="125.0" text="Cancel">
+                  <Button  mnemonicParsing="false" prefWidth="125.0" text="Cancel" onAction="#cancelBtn">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefWidth="125.0" text="Execute">
+                  <Button mnemonicParsing="false" prefWidth="125.0" text="Execute" onAction="#executeCommandBtn">
                      <font>
                         <Font size="15.0" />
                      </font>

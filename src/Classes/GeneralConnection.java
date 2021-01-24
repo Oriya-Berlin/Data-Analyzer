@@ -1,8 +1,10 @@
 package Classes;
 
 
+import java.sql.SQLException;
+
 // TODO: maybe make it abstract class, and then override it
-public class GeneralConnection {
+public abstract class GeneralConnection {
 
     private String connectionName;
 
@@ -15,6 +17,20 @@ public class GeneralConnection {
     public String getConnectionName(){
         return this.connectionName;
     }
+
+
+    public String getConnectionString() {
+        return null;
+    }
+
+    public String getDbType() {
+        return null;
+    }
+
+    public Boolean isConnected() throws SQLException {
+        return null;
+    }
+
 
 
     @Override

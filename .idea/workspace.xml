@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="added registry for tables and connections">
+    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="general changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/CanvasPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/CanvasPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/MySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/MySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/TableSourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/TableSourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/CanvasPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/CanvasPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/ConnectionsRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/ConnectionsRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/GeneralConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/GeneralConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/TablesRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/TablesRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/TableSourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/TableSourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ExecuteCommandView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ExecuteCommandView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610643636502</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="general changes">
+      <created>1611094402902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611094402902</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,6 +191,7 @@
     <MESSAGE value="db types stuff added" />
     <MESSAGE value="db types functionality added" />
     <MESSAGE value="added registry for tables and connections" />
-    <option name="LAST_COMMIT_MESSAGE" value="added registry for tables and connections" />
+    <MESSAGE value="general changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="general changes" />
   </component>
 </project>

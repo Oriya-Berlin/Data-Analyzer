@@ -102,6 +102,7 @@ public class TableSourceController {
 
             case "MySQL":
                 MySQL connection = new MySQL(connectionName, address, username, password);
+                // TODO: add condition if the connection is connected
                 connections.set(connectionName, connection);
                 break;
 
