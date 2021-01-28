@@ -1,6 +1,7 @@
 package Classes;
 
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // TODO: maybe make it abstract class, and then override it
@@ -18,7 +19,6 @@ public abstract class GeneralConnection {
         return this.connectionName;
     }
 
-
     public String getConnectionString() {
         return null;
     }
@@ -27,10 +27,13 @@ public abstract class GeneralConnection {
         return null;
     }
 
-    public Boolean isConnected() throws SQLException {
+    public Boolean getIsConnected() throws SQLException {
         return null;
     }
 
+    public ResultSet setCommandAndGetResultSet(String command) throws SQLException {
+        return null;
+    }
 
 
     @Override

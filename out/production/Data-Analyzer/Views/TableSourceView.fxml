@@ -30,7 +30,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
-                              <ComboBox fx:id="LocalComboBox" prefWidth="344.0" visibleRowCount="30" />
+                              <ComboBox fx:id="local_ComboBox" prefWidth="344.0" visibleRowCount="30" />
                               <TextField fx:id="local_username_tf" />
                               <TextField fx:id="local_password_tf" />
                               <TextField fx:id="local_address_tf" />
@@ -70,11 +70,11 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="234.0" prefWidth="344.0" spacing="20.0">
                            <children>
-                              <ComboBox fx:id="RemoteComboBox" prefWidth="344.0" visibleRowCount="30" />
-                              <TextField fx:id="remote_username_tf" />
-                              <TextField fx:id="remote_password_tf" />
-                              <TextField fx:id="remote_address_tf" />
-                              <TextField fx:id="remote_connName_tf"/>
+                              <ComboBox fx:id="remote_ComboBox" prefWidth="344.0" visibleRowCount="30" />
+                              <TextField fx:id="remote_username_tf" text="sql7389068"/>
+                              <TextField fx:id="remote_password_tf" text="ud1yKg7LIA"/>
+                              <TextField fx:id="remote_address_tf" text="sql7.freemysqlhosting.net:3306/sql7389068"/>
+                              <TextField fx:id="remote_connName_tf" text="newconn" />
                            </children>
                         </VBox>
                      </children>

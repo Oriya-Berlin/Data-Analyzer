@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
@@ -38,7 +39,6 @@ public class ExecuteCommandController {
 
         instance = this;
 
-
         // add tables name to combo box
         HashMap<String,AnalyzerTableView> tables = tablesRegistryInstance.getItems();
 
@@ -48,7 +48,6 @@ public class ExecuteCommandController {
 
         // add all the connections to frames table
         initializeFramesTable();
-//        ConnectionsRegistry connectionsRegistry = ConnectionsRegistry.getInstance();
         HashMap<String, GeneralConnection> connections = connectionsRegistry.getItems();
 
         for(GeneralConnection conn: connections.values())
@@ -58,19 +57,26 @@ public class ExecuteCommandController {
 
 
     @FXML
-    private void executeCommandBtn(){
+    private void executeCommandBtn(ActionEvent actionEvent) throws SQLException {
 
         GeneralConnection selectedConnection = framesTable.getSelectionModel().getSelectedItem();
         String command = sqlCommandTextArea.getText();
         String selectedTableName = comboBox.getValue();
         AnalyzerTableView selectedTable = tablesRegistryInstance.get(selectedTableName);
 
+        ResultSet rs = selectedConnection.setCommandAndGetResultSet(command);
+        selectedTable.setData(rs);
         // TODO: to be continue...
+
+        // close the window
+        Stage window = (Stage) ((Node)actionEvent.getTarget()).getScene().getWindow();
+        window.close();
     }
 
 
     @FXML
     private void cancelBtn(ActionEvent actionEvent){
+        // close the window
         Stage window = (Stage) ((Node)actionEvent.getTarget()).getScene().getWindow();
         window.close();
     }

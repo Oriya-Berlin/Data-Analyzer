@@ -2,30 +2,36 @@ package Classes;
 
 import java.util.HashMap;
 
-public class Row { // rows populate the tables with data
+public class Row {
 
-	private HashMap<String, Double> attributes;// since the number of columns can change across tables, a HashMap is
-												// used to simulate the columns of data
 
-	public Row(HashMap<String, Double> attributes) {
-		this.attributes = attributes;
+	private HashMap<String, Object> row; // since the number of columns can change across tables, a HashMap is
+
+
+	public Row(HashMap<String, Object> row) {
+		this.row = row;
 	}
 
-	public HashMap<String, Double> getAttributeMap() {
 
-		if (attributes == null) {
-			attributes = new HashMap<String, Double>();
+
+	public HashMap<String, Object> getRow() {
+
+		if (row == null) {
+			row = new HashMap<String, Object>();
 		}
-
-		return attributes;
+		return row;
 	}
 
-	public void setAttribute(String key, Double value) {
-		attributes.put(key, value);
+
+
+	public void setAttribute(String key, Object value) {
+		row.put(key, value);
 	}
+
+
 
 	public Object getAttribute(String key) {
-		return attributes.get(key);
+		return row.get(key);
 	}
 
 }

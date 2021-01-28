@@ -18,6 +18,7 @@ import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -45,6 +46,7 @@ public class Controller {
     boolean isTableAdded = false;
 
 
+
     @FXML
     public void setOnDragDroppedHandle(DragEvent event) {
 
@@ -53,24 +55,29 @@ public class Controller {
             xCoordinate = event.getX() - 135;
             yCoordinate = event.getY() - 135;
         }
+
         String btnId = ((Button) event.getGestureSource()).getId();
         if(btnId.equals("table"))
             isTableAdded = true;
 
+        event.consume();
     }
 
 
 
     @FXML
     public void setOnDragOverHandle(DragEvent event) {
+
         /* data is dragged over the target */
         /* accept it only if it is not dragged from the same node
          * and if it has a string data */
+
         if (event.getGestureSource() != canvas &&
                 event.getDragboard().hasImage()) {
             /* allow for both copying and moving, whatever user chooses */
             event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         }
+
         event.consume();
     }
 
@@ -92,10 +99,29 @@ public class Controller {
 
 
 
+// --------------------------------------------------------------------
+    public void setOnDragEnteredHandle(DragEvent event) {
+        /* the drag-and-drop gesture entered the target */
+        /* show to the user that it is an actual gesture target */
+        /* Make the photo bold or something that gives the user hint to drop */
+        if (event.getGestureSource() != canvas &&   // check the canvas
+                event.getDragboard().hasImage()) {
+            System.out.println("Imaged Arrived to Droppable area");
+        }
+        event.consume();
+    }
+
+    public void setOnDragExitedHandle(DragEvent event) {
+        /* mouse moved away, remove the graphical cues */
+        System.out.println("Exited from the target");
+        event.consume();
+    }
+// --------------------------------------------------------------------
+
+
+
     @FXML
     public void onDragDone(DragEvent event) throws IOException {
-
-//        GraphController graph;
 
         String btnId = ((Button) event.getGestureSource()).getId();
 
@@ -120,8 +146,6 @@ public class Controller {
                     TablesRegistry tables = TablesRegistry.getInstance();
                     tables.set(tableName, table);
                 }
-//                else
-//                    AlertsMaker.showErrorMessage("Invalid Action", "You must add table first.");
                 break;
 
             case "lineChartBtn":
@@ -216,7 +240,7 @@ public class Controller {
         ObservableList<Row> table_dataA;
 
         // populate the data for table A
-        table_dataA = FXCollections.observableArrayList(new Row(new HashMap<String, Double>() {
+        table_dataA = FXCollections.observableArrayList(new Row(new HashMap<String, Object>() {
             {
                 put("1", 10000.0);
                 put("2", 120000.0);
@@ -224,7 +248,7 @@ public class Controller {
                 put("4", 30000.0);
                 put("5", 0.0);
             }
-        }), new Row(new HashMap<String, Double>() {
+        }), new Row(new HashMap<String, Object>() {
             {
                 put("1", 31000.0);
                 put("2", 74000.0);
@@ -232,7 +256,7 @@ public class Controller {
                 put("4", 17000.0);
                 put("5", 0.0);
             }
-        }), new Row(new HashMap<String, Double>() {
+        }), new Row(new HashMap<String, Object>() {
             {
                 put("1", 14000.0);
                 put("2", 53000.0);
@@ -240,7 +264,7 @@ public class Controller {
                 put("4", 77000.0);
                 put("5", 0.0);
             }
-        }), new Row(new HashMap<String, Double>() {
+        }), new Row(new HashMap<String, Object>() {
             {
                 put("1", 52000.0);
                 put("2", 33000.0);

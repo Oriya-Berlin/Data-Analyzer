@@ -14,7 +14,7 @@ public class MySQL extends GeneralConnection{
     private ResultSet resultSet = null;
     private Statement statement = null;
     private String DbType;
-    private boolean isConnected;
+    private Boolean isConnected;
 
 
 
@@ -52,8 +52,7 @@ public class MySQL extends GeneralConnection{
         return DbType;
     }
 
-
-
+    @Override
     public ResultSet setCommandAndGetResultSet(String command) throws SQLException {
         this.resultSet = this.statement.executeQuery(command);
         return this.resultSet;
@@ -66,7 +65,7 @@ public class MySQL extends GeneralConnection{
 
 
     @Override
-    public Boolean isConnected() throws SQLException {
+    public Boolean getIsConnected() throws SQLException {
         if(!this.connection.isClosed())
             return true;
         return false;
