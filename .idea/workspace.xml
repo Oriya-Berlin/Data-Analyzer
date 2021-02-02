@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="general changes 2">
+    <list default="true" id="0992289c-1830-4beb-a8f9-49ccc1f97b6b" name="Default Changelist" comment="tables data handling">
+      <change afterPath="$PROJECT_DIR$/src/Classes/CustomizedColumn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/AnalyzerTableView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/AnalyzerTableView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/MySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/MySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/Row.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/RowCellValueFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Classes/RowCellValueFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/TableSourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/TableSourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/TableSourceView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Controllers/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data-Analyzer/Views/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes/AnalyzerTableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/AnalyzerTableView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/GeneralConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/GeneralConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/MySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Row.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/RowCellValueFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/RowCellValueFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ExecuteCommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TableSourceView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611528763586</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tables data handling">
+      <created>1611870941877</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611870941877</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,7 +206,8 @@
     <MESSAGE value="added registry for tables and connections" />
     <MESSAGE value="general changes" />
     <MESSAGE value="general changes 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="general changes 2" />
+    <MESSAGE value="tables data handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="tables data handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
